@@ -1,0 +1,68 @@
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+
+.graph-expanded {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: white;
+}
+
+
+.notes-expanded {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+}
+
+
+.clickable {
+  pointer-events: auto !important;
+}
+
+
+[data-no-dnd="true"] {
+  touch-action: none;
+  -webkit-user-drag: none;
+}
+
+
+.react-flow__node {
+  
+  transition: none !important;
+}
+
+
+.react-flow:not(.react-flow--dragging) .react-flow__node:hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+
+.react-flow__handle {
+  min-width: 8px;
+  min-height: 8px;
+}
+
+
+.react-flow__nodes {
+  will-change: transform;
+}

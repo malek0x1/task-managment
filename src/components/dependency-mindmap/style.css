@@ -1,0 +1,44 @@
+
+
+.custom-handle {
+  width: 8px;
+  height: 4px;
+  border-radius: 1px;
+  background-color: #aaaaaa;
+  border: none;
+  min-width: 2px;
+  min-height: 2px;
+}
+
+
+.react-flow__edge-path-animated {
+  stroke-dasharray: 5;
+  animation: dashdraw 0.5s linear infinite;
+}
+
+@keyframes dashdraw {
+  from {
+    stroke-dashoffset: 10;
+  }
+}
+
+
+.task-node-wrapper,
+.subtask-node-wrapper {
+  pointer-events: all;
+}
+
+.task-node-wrapper *,
+.subtask-node-wrapper * {
+  pointer-events: auto;
+}
+
+
+.react-flow__handle {
+  pointer-events: none !important;
+}
+
+
+.react-flow__node {
+  pointer-events: all;
+}

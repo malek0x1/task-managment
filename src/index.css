@@ -1,0 +1,322 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+ 
+    --radius: 0.5rem;
+
+    
+    --flow-completed: #10B981;
+    --flow-progress: #F59E0B;
+    --flow-todo: #8F8F8F;
+    --flow-highlight: #6366F1;
+    --flow-highPriority: #EF4444;
+    --flow-mediumPriority: #F59E0B;
+    --flow-lowPriority: #3B82F6;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.2s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out forwards;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+@keyframes edge-flow {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes pulse-node {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+.animate-pulse-node {
+  animation: pulse-node 1.5s infinite;
+}
+
+
+.react-flow__handle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #8f8f8f;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.react-flow__handle-right {
+  right: -8px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.react-flow__handle-left {
+  left: -8px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.react-flow__handle-bottom {
+  bottom: -8px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.react-flow__handle-top {
+  top: -8px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.3);
+  background-color: #6366f1;
+  border-color: #6366f1;
+}
+
+.react-flow__node {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.react-flow__node.selected {
+  box-shadow: 0 0 0 2px rgb(99 102 241 / 60%);
+}
+
+.react-flow__controls {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 4px;
+}
+
+.react-flow__controls-button {
+  border-radius: 4px;
+  padding: 4px;
+  color: #666;
+}
+
+.react-flow__minimap {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+.enhanced-edge {
+  transition: stroke 0.3s ease, stroke-width 0.2s ease;
+}
+
+.enhanced-edge:hover {
+  stroke-width: 2.5px;
+}
+
+.animated-edge {
+  stroke-dasharray: 5, 5;
+  animation: edge-flow 1.5s linear infinite;
+}
+
+@keyframes edge-flow {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+.edge-label {
+  font-size: 10px;
+  background-color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  pointer-events: all;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.edge-label:hover {
+  transform: scale(1.05);
+}
+
+
+.react-flow__connection-path {
+  stroke: #6366f1;
+  stroke-width: 1.5;
+  stroke-dasharray: 5, 5;
+  animation: edge-flow 1.5s linear infinite;
+}
+
+
+.react-flow__viewport {
+  transition: transform 0.2s ease-out;
+}
+
+
+.bg-dots-pattern {
+  background-image: radial-gradient(circle, #d1d1d1 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+
+.react-flow__edge {
+  pointer-events: none; 
+}
+
+.react-flow__edge path {
+  pointer-events: stroke; 
+  cursor: pointer;
+}
+
+
+.excalidraw .App-menu_top .buttonList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.excalidraw .App-menu_top {
+  padding: 0.5rem;
+}
+
+.excalidraw .Island {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.excalidraw .ToolIcon__icon {
+  width: 24px;
+  height: 24px;
+  font-size: 0.9rem;
+}
+
+.excalidraw .ToolIcon_size_small {
+  padding: 4px;
+}

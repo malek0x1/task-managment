@@ -1,0 +1,38 @@
+
+
+.react-flow__node {
+  pointer-events: auto !important;
+}
+
+.react-flow__node .clickable {
+  pointer-events: auto !important;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+.subtask-checkbox,
+button[data-no-dnd="true"] {
+  pointer-events: auto !important;
+  z-index: 20;
+}
+
+
+.react-flow__node .card-content {
+  pointer-events: auto !important;
+}
+
+
+.react-flow__node [data-no-dnd="true"] {
+  pointer-events: auto !important;
+}
+
+
+.react-flow__node.selectable:active {
+  box-shadow: 0 0 0 2px rgba(0, 89, 220, 0.5);
+}
+
+
+.react-flow__node.draggable {
+  cursor: move;
+}
