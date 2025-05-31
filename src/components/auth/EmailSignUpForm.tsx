@@ -1,10 +1,15 @@
-
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Loader2, Mail, Key, Github } from 'lucide-react';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Loader2, Mail, Key, Github } from "lucide-react";
 
 interface EmailSignUpFormProps {
   email: string;
@@ -13,7 +18,7 @@ interface EmailSignUpFormProps {
   setPassword: (password: string) => void;
   isLoading: boolean;
   handleEmailSignUp: (e: React.FormEvent) => Promise<void>;
-  handleSocialSignIn: (provider: 'github') => Promise<void>;
+  handleSocialSignIn: (provider: "github") => Promise<void>;
 }
 
 const EmailSignUpForm: React.FC<EmailSignUpFormProps> = ({
@@ -23,7 +28,7 @@ const EmailSignUpForm: React.FC<EmailSignUpFormProps> = ({
   setPassword,
   isLoading,
   handleEmailSignUp,
-  handleSocialSignIn
+  handleSocialSignIn,
 }) => {
   return (
     <form onSubmit={handleEmailSignUp}>
@@ -67,33 +72,9 @@ const EmailSignUpForm: React.FC<EmailSignUpFormProps> = ({
             Password must be at least 8 characters long.
           </p>
         </div>
-        <Button
-          type="submit"
-          className="w-full"
-          disabled={isLoading}
-        >
-          {isLoading ? (
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          ) : null}
+        <Button type="submit" className="w-full" disabled={isLoading}>
+          {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
           Create Account
-        </Button>
-        <div className="relative my-4">
-          <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t border-gray-200" />
-          </div>
-          <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white px-2 text-gray-500">Or continue with</span>
-          </div>
-        </div>
-        <Button
-          type="button"
-          variant="outline"
-          className="w-full"
-          onClick={() => handleSocialSignIn('github')}
-          disabled={isLoading}
-        >
-          <Github className="mr-2 h-4 w-4" />
-          GitHub
         </Button>
       </CardContent>
       <CardFooter className="flex justify-center border-t p-4">

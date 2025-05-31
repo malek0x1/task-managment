@@ -67,27 +67,29 @@ const PanelHeader: React.FC<PanelHeaderProps> = ({
         {title}
       </span>
       <div className="flex items-center gap-1">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-7 w-7 transition-all duration-200 hover:bg-gray-100"
-                onClick={togglePanelLayout}
-              >
-                {isHorizontal ? (
-                  <LayoutPanelLeftIcon className="h-4 w-4 rotate-90" />
-                ) : (
-                  <LayoutGridIcon className="h-4 w-4" />
-                )}
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>Toggle Panel Layout</TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        {panelType === "graph" && (
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-7 w-7 transition-all duration-200 hover:bg-gray-100"
+                  onClick={togglePanelLayout}
+                >
+                  {isHorizontal ? (
+                    <LayoutPanelLeftIcon className="h-4 w-4 rotate-90" />
+                  ) : (
+                    <LayoutGridIcon className="h-4 w-4" />
+                  )}
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>Toggle Panel Layout</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
 
-        {onExpand && (
+        {/* {onExpand && (
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -121,8 +123,8 @@ const PanelHeader: React.FC<PanelHeaderProps> = ({
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
-        )}
-
+        )} */}
+        {/* 
         {showFullscreen && onFullscreen && (
           <TooltipProvider>
             <Tooltip>
@@ -139,9 +141,9 @@ const PanelHeader: React.FC<PanelHeaderProps> = ({
               <TooltipContent>Fullscreen Mode</TooltipContent>
             </Tooltip>
           </TooltipProvider>
-        )}
+        )} */}
 
-        {showCollapse && (
+        {showCollapse && panelType !== "graph" && (
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>

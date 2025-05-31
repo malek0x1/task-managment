@@ -71,7 +71,7 @@ export const createLayoutSlice: StateCreator<
   LayoutSlice
 > = (set, get) => ({
 
-  layoutMode: 'vertical',
+  layoutMode: 'horizontal',
   collapsedNodes: new Set<string>(),
   completedSubtasks: {},
   collapseUpdateTimestamp: 0,

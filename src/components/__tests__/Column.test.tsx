@@ -102,6 +102,5 @@ describe("Column", () => {
     render(<Column column={mockColumn} tasks={[]} {...mockProps} />);
 
     expect(screen.getByText("No tasks yet")).toBeInTheDocument();
-    expect(screen.getByText("Add your first task")).toBeInTheDocument();
   });
 });

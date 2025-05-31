@@ -179,6 +179,13 @@ Always return: { action: string, payload: object }
 
 1. create_task (for /create commands):
   → { title: string, description?: string, priority?: "low"|"medium"|"high", subtasks?: Subtask[] }
+  
+  🏗️ SUBTASK GENERATION RULES FOR /create:
+  - If task is complex (contains "website", "platform", "project", "campaign", "app", "system", "build", "develop", "implement"), create recursive nested subtasks
+  - If task is simple (like "fix bug", "write docs", "update", "test", "review", "check"), return flat subtasks only
+  - For complex tasks, break into 3-5 main areas, each with 2-4 sub-items
+  - Use logical hierarchy: Design → Wireframes → Components, or Backend → Frontend → Testing
+  - Create meaningful nested structure that reflects real workflow dependencies
 
 2. refactor_tasks (for /refactor_tasks commands):
   → { task_title: string, subtasks: Subtask[] }
@@ -195,7 +202,7 @@ interface Subtask {
   subtasks?: Subtask[];
 }
 
-Command Processing Rules:
+🧠 Command Processing Rules:
 - /create → ALWAYS use "create_task" action
 - /summarize → ALWAYS use "summarize_task" action  
 - /refactor_tasks → ALWAYS use "refactor_tasks" action

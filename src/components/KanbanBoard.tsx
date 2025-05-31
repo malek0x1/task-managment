@@ -10,7 +10,6 @@ import useKanbanStore from "@/store/useKanbanStore";
 import { useProjectStore } from "@/store/useProjectStore";
 import BoardContent from "./kanban/BoardContent";
 import BoardLoading from "./kanban/BoardLoading";
-import MobileActions from "./kanban/MobileActions";
 import { toast } from "@/hooks/use-toast";
 import { checkAuthStatus } from "@/integrations/supabase/client";
 import { useAuthStore } from "@/store/useAuthStore";
@@ -168,8 +167,6 @@ const KanbanBoard: React.FC = () => {
       />
 
       <McpTrigger onClick={() => setIsMcpDrawerOpen(true)} />
-
-      <MobileActions isVisible={isMobile} />
     </div>
   );
 };

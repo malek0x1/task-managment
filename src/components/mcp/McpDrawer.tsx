@@ -494,7 +494,7 @@ const McpDrawer: React.FC<McpDrawerProps> = ({
               </div>
             )}
 
-            {lastResult && (
+            {/* {lastResult && (
               <div
                 className={`flex items-center gap-2 text-sm ${
                   lastResult.success ? "text-green-600" : "text-red-600"
@@ -507,11 +507,11 @@ const McpDrawer: React.FC<McpDrawerProps> = ({
                 )}
                 {lastResult.message}
               </div>
-            )}
+            )} */}
           </form>
 
           {}
-          {recentCommands.length > 0 &&
+          {/* {recentCommands.length > 0 &&
             !showCommands &&
             !showTaskSuggestions && (
               <div className="mt-4 text-xs text-muted-foreground space-y-2">
@@ -533,7 +533,7 @@ const McpDrawer: React.FC<McpDrawerProps> = ({
                   ))}
                 </div>
               </div>
-            )}
+            )} */}
 
           <div className="mt-6 text-xs text-muted-foreground space-y-2">
             <p className="font-medium">Try these enhanced examples:</p>
