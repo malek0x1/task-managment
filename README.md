@@ -1,5 +1,4 @@
-# demo video https://player.vimeo.com/video/1089326110?background=1&autoplay=1&autopause=0&loop=1
-
+[![DEMO Video]](https://player.vimeo.com/video/1089326110?background=1&autoplay=1&autopause=0&loop=1)
 
 ```
     Kanban + Graph: Tasks with subtasks, priorities, and visual DAG dependencies (React Flow + Dagre).
